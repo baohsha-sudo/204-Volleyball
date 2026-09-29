@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>204 Volleyball Club</title>
+<meta name="description" content="204 Volleyball Club, club volleyball in Winnipeg since 2010. Teams from 13U to 18U, tryouts, camps, and coach contacts.">
+<meta property="og:title" content="204 Volleyball Club">
+<meta property="og:description" content="Club volleyball in Winnipeg since 2010. Teams from 13U to 18U, tryouts, and camps.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/club-photo.jpg">
+<link rel="icon" href="images/logo-mark-gold.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "204 Volleyball Club",
+  "sport": "Volleyball",
+  "foundingDate": "2010",
+  "areaServed": "Winnipeg, Manitoba",
+  "telephone": "+1-204-996-0675",
+  "email": "b_jared@hotmail.com",
+  "logo": "images/logo-mark-gold.jpg",
+  "sameAs": ["https://www.instagram.com/204volleyballclub/", "https://x.com/204Volleyball"]
+}
+</script>
+<style>
+  :root {
+    --brand-red: #9A0000;
+    --brand-red-deep: #6E0000;
+    --gold: #FFCC00;
+    --accent-text: #9A0000;
+    --ink: #171313;
+    --ink-soft: #3E3636;
+    --muted: #6F6464;
+    --bg: #F4F3F1;
+    --surface: #FFFFFF;
+    --line: #DDD8D4;
+    --on-red: #FFFFFF;
+    --focus: #9A0000;
+    --font-display: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+    --font-body: 'Barlow', 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --accent-text: #FF7A6E;
+      --ink: #F3EEEC; --ink-soft: #D3C9C7; --muted: #A59997;
+      --bg: #120E0E; --surface: #1B1515; --line: #342B2B;
+      --focus: #FFCC00;
+    }
+  }
+  :root[data-theme="dark"] {
+    --accent-text: #FF7A6E;
+    --ink: #F3EEEC; --ink-soft: #D3C9C7; --muted: #A59997;
+    --bg: #120E0E; --surface: #1B1515; --line: #342B2B;
+    --focus: #FFCC00;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--ink-soft); font-family: var(--font-body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; height: auto; display: block; }
+  h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; text-wrap: balance; }
+  h1 { font-size: clamp(2.9rem, 6.4vw, 5.2rem); line-height: 0.95; font-weight: 800; text-transform: uppercase; letter-spacing: 0.005em; }
+  h2 { font-size: clamp(2.1rem, 4.2vw, 3.2rem); line-height: 1; font-weight: 800; text-transform: uppercase; }
+  h3 { font-size: 1.5rem; line-height: 1.15; font-weight: 700; }
+  p { margin: 0; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  .skip-link { position: absolute; left: -999px; top: 0; background: var(--brand-red); color: var(--on-red); padding: 0.8em 1.2em; z-index: 200; }
+  .skip-link:focus { left: 1rem; top: 1rem; }
+
+  .wrap { max-width: 1180px; margin-inline: auto; padding-inline: 1.5rem; }
+  section { padding-block: clamp(3.5rem, 7vw, 6rem); }
+  .eyebrow { font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); }
+  .eyebrow + h2 { margin-top: 0.5rem; }
+  .section-head { max-width: 62ch; margin-bottom: 2.6rem; }
+  .section-head .lede { margin-top: 1rem; font-size: 1.08rem; }
+  .flag { display: inline-block; margin-top: 1rem; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent-text); border: 1px dashed var(--accent-text); padding: 0.2rem 0.6rem; }
+  .ph { color: var(--muted); font-style: italic; }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 48px; padding: 0.7rem 1.4rem; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; border: 2px solid transparent; border-radius: 4px; cursor: pointer; transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease; }
+  .btn:active { transform: translateY(1px); }
+  .btn-red { background: var(--brand-red); color: var(--on-red); }
+  .btn-red:hover { background: var(--brand-red-deep); }
+  .btn-gold { background: var(--gold); color: #171313; }
+  .btn-gold:hover { background: #FFDD4D; }
+  .btn-outline { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-outline:hover { border-color: var(--accent-text); color: var(--accent-text); }
+
+  /* Header */
+  header.site { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav-row { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 0.8rem; transition: padding-block 0.25s ease; }
+  header.site.compact .nav-row { padding-block: 0.45rem; }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+  .brand img { height: 44px; width: auto; border-radius: 6px; transition: height 0.25s ease; }
+  header.site.compact .brand img { height: 36px; }
+  .brand-name { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; text-transform: uppercase; color: var(--ink); line-height: 1; }
+  .brand-name small { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; color: var(--muted); margin-top: 0.2rem; }
+  nav.primary { display: flex; align-items: center; gap: 1.8rem; }
+  nav.primary ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
+  nav.primary a.navlink { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink-soft); padding-block: 0.3rem; border-bottom: 2px solid transparent; transition: border-color 0.2s ease, color 0.2s ease; }
+  nav.primary a.navlink:hover { color: var(--accent-text); border-bottom-color: var(--accent-text); }
+  .hamburger { display: none; min-width: 48px; min-height: 48px; background: none; border: 1px solid var(--line); border-radius: 4px; cursor: pointer; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); margin: 5px auto; }
+  .mobile-menu { display: none; }
+  @media (max-width: 900px) {
+    nav.primary ul, nav.primary .btn { display: none; }
+    .hamburger { display: block; }
+    .mobile-menu { display: block; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: var(--surface); }
+    .mobile-menu.open { max-height: 560px; border-top: 1px solid var(--line); }
+    .mobile-menu ul { list-style: none; margin: 0; padding: 0.6rem 1.5rem 1.4rem; display: flex; flex-direction: column; }
+    .mobile-menu a { display: block; padding-block: 0.8rem; font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; text-transform: uppercase; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line); }
+    .mobile-menu .btn { margin-top: 1rem; width: 100%; color: var(--on-red); border-bottom: none; }
+  }
+
+  /* Hero */
+  .hero { padding-top: clamp(2.5rem, 6vw, 4.5rem); padding-bottom: clamp(2rem, 4vw, 3rem); }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero h1 { margin-top: 0.8rem; }
+  .hero h1 .paren { color: var(--accent-text); }
+  .hero .sub { margin-top: 1.3rem; font-size: 1.2rem; max-width: 44ch; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2rem; }
+  .club-card { background: var(--brand-red); color: var(--on-red); border-radius: 8px; padding: 1.6rem 1.6rem 1.4rem; box-shadow: 0 30px 60px -32px rgba(60, 0, 0, 0.55); }
+  .club-card img { width: 62%; max-width: 220px; margin: 0 auto 1rem; }
+  .club-card dl { margin: 0; display: grid; gap: 0; }
+  .club-card .row { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.65rem; border-top: 1px solid rgba(255, 255, 255, 0.22); }
+  .club-card dt { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.95rem; color: rgba(255, 255, 255, 0.78); }
+  .club-card dd { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--gold); text-align: right; }
+
+  /* Photo band */
+  .photo-band { position: relative; margin: 0; }
+  .photo-band img { width: 100%; aspect-ratio: 21 / 8; object-fit: cover; object-position: 50% 78%; }
+  @media (max-width: 700px) { .photo-band img { aspect-ratio: 4 / 3; } }
+  .photo-band figcaption { position: absolute; left: 1.5rem; bottom: 1.2rem; background: var(--brand-red); color: var(--on-red); font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.35rem 0.8rem; border-radius: 3px; }
+
+  /* Teams */
+  .ages { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+  @media (max-width: 700px) { .ages { grid-template-columns: repeat(3, 1fr); } }
+  .ages div { padding: 1.4rem 0.5rem; text-align: center; border-left: 1px solid var(--line); font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--ink); line-height: 1; }
+  .ages div:first-child { border-left: none; }
+  @media (max-width: 700px) { .ages div:nth-child(3n + 1) { border-left: none; } .ages div:nth-child(n + 4) { border-top: 1px solid var(--line); } }
+  .ages span { color: var(--accent-text); font-size: 0.55em; }
+  .tiers { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.4rem; margin-top: 1.6rem; }
+  .tiers .label { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .chip { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-transform: uppercase; color: var(--ink); }
+  .swatch { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--line); }
+
+  /* Register programs */
+  .programs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+  @media (max-width: 800px) { .programs { grid-template-columns: 1fr; } }
+  .program { background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--brand-red); border-radius: 6px; padding: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
+  .program.camps { border-top-color: var(--gold); }
+  .program h3 { font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+  .program dl { margin: 0; }
+  .program .row { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.6rem; border-top: 1px solid var(--line); }
+  .program dt { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+  .program dd { margin: 0; text-align: right; }
+  .program .btn { margin-top: auto; align-self: flex-start; }
+
+  /* Coaches */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; min-width: 520px; }
+  th { text-align: left; font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 0.9rem 1.2rem; border-bottom: 2px solid var(--line); }
+  td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  td.age { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--ink); width: 7rem; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-grid .copy p + p { margin-top: 1.1rem; }
+  .wordmark-tile { background: var(--brand-red); border-radius: 8px; padding: clamp(1.5rem, 4vw, 3rem); display: flex; align-items: center; justify-content: center; }
+  .wordmark-tile img { width: 100%; max-width: 380px; }
+
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: repeat(2, minmax(150px, 1fr)); gap: 1rem; }
+  @media (max-width: 700px) { .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: none; } }
+  .shot { background: var(--surface); border: 1px dashed var(--line); border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; min-height: 150px; font-family: var(--font-display); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+  .shot.big { grid-row: span 2; }
+  @media (max-width: 700px) { .shot.big { grid-column: span 2; grid-row: auto; min-height: 220px; } }
+
+  /* FAQ */
+  .faq { max-width: 780px; border-top: 1px solid var(--line); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.2rem; font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--ink); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .plus { font-size: 1.6rem; color: var(--accent-text); transition: transform 0.2s ease; flex-shrink: 0; }
+  .faq details[open] summary .plus { transform: rotate(45deg); }
+  .faq .a { padding-bottom: 1.3rem; max-width: 64ch; }
+
+  /* Final CTA */
+  .final { background: var(--brand-red); color: var(--on-red); }
+  .final-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+  @media (max-width: 800px) { .final-grid { grid-template-columns: 1fr; } }
+  .final .eyebrow { color: var(--gold); }
+  .final h2 { color: var(--on-red); }
+  .final p { margin-top: 1rem; font-size: 1.15rem; color: rgba(255, 255, 255, 0.86); max-width: 46ch; }
+  .final .btn-outline { color: var(--on-red); border-color: rgba(255, 255, 255, 0.45); }
+  .final .btn-outline:hover { color: var(--gold); border-color: var(--gold); }
+  .final img { width: 150px; }
+
+  /* Contact / registration */
+  .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+  form.reg { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.2rem; }
+  form.reg[hidden] { display: none; }
+  @media (max-width: 600px) { form.reg { grid-template-columns: 1fr; } }
+  .field { display: flex; flex-direction: column; gap: 0.35rem; }
+  .field.full { grid-column: 1 / -1; }
+  .field label { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.95rem; color: var(--ink); }
+  .field input, .field select, .field textarea { font-family: var(--font-body); font-size: 1rem; min-height: 48px; padding: 0.7rem 0.85rem; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink); }
+  .field textarea { min-height: 110px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent-text); }
+  .form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+  .form-note { font-size: 0.9rem; color: var(--muted); }
+  .confirm { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--gold); border-radius: 6px; padding: 1.6rem 1.8rem; }
+  .confirm p { margin-top: 0.6rem; }
+  .confirm .btn { margin-top: 1.2rem; }
+  .info { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .info li { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
+  .info .k { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+  .info .v { text-align: right; overflow-wrap: anywhere; }
+  .info a { color: var(--accent-text); text-decoration: none; font-weight: 600; }
+  .info a:hover { text-decoration: underline; }
+
+  /* Footer */
+  footer.site { background: #171313; color: #CFC5C3; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; padding-block: 3.5rem 2rem; }
+  @media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  .footer-brand img { width: 86px; border-radius: 6px; }
+  .footer-brand p { margin-top: 1rem; font-size: 0.95rem; max-width: 30ch; }
+  .footer-col h4 { margin: 0 0 0.9rem; font-family: var(--font-display); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #FFCC00; font-size: 1rem; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
+  .footer-col a { color: #CFC5C3; text-decoration: none; }
+  .footer-col a:hover { color: #FFFFFF; }
+  .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-block: 1.3rem; border-top: 1px solid #342B2B; font-size: 0.88rem; }
+  .footer-bottom a { color: #CFC5C3; text-decoration: none; margin-left: 1.2rem; }
+  .footer-bottom a:hover { color: #FFFFFF; }
+
+  /* Motion: slide only, content stays visible */
+  .js .reveal { transform: translateY(18px); transition: transform 0.6s ease; }
+  .js .reveal.in { transform: none; }
+</style>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site" id="siteHeader">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top" aria-label="204 Volleyball Club home">
+      <img src="images/logo-mark-gold.jpg" alt="204 Volleyball Club logo" width="323" height="340">
+      <span class="brand-name">204 Volleyball<small>Club · Winnipeg</small></span>
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <ul>
+        <li><a class="navlink" href="#teams">Teams</a></li>
+        <li><a class="navlink" href="#register">Tryouts &amp; Camps</a></li>
+        <li><a class="navlink" href="#coaches">Coaches</a></li>
+        <li><a class="navlink" href="#about">About</a></li>
+        <li><a class="navlink" href="#faq">FAQ</a></li>
+        <li><a class="navlink" href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-red" href="#contact" data-program="Tryouts">Register</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#register">Tryouts &amp; Camps</a></li>
+      <li><a href="#coaches">Coaches</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="btn btn-red" href="#contact" data-program="Tryouts">Register</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <p class="eyebrow">(204) Volleyball Club · Est. 2010</p>
+        <h1>Club volleyball in Winnipeg, <span class="paren">13U to 18U.</span></h1>
+        <p class="sub">Boys' and girls' teams, tryouts, and camps from one of the largest volleyball clubs in Winnipeg. Find your team, find your coach, and register in one place.</p>
+        <div class="cta-row">
+          <a class="btn btn-red" href="#contact" data-program="Tryouts">Register for Tryouts</a>
+          <a class="btn btn-outline" href="#register">See Camps</a>
+        </div>
+      </div>
+      <aside class="club-card reveal" aria-label="Club facts">
+        <img src="images/logo-mark-gold.jpg" alt="" width="323" height="340">
+        <dl>
+          <div class="row"><dt>Founded</dt><dd>2010</dd></div>
+          <div class="row"><dt>Age groups</dt><dd>13U to 18U</dd></div>
+          <div class="row"><dt>Member of</dt><dd>Volleyball Manitoba</dd></div>
+          <div class="row"><dt>Nationals</dt><dd>2025, Winnipeg</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <figure class="photo-band">
+    <img src="images/club-photo.jpg" alt="Athletes, coaches, and staff of 204 Volleyball Club together in a gym" width="1800" height="1197">
+    <figcaption>The 204 club, athletes, coaches, and staff</figcaption>
+  </figure>
+
+  <section id="teams">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">(Teams)</p>
+        <h2>Six age groups. Three tiers.</h2>
+        <p class="lede">Boys' and girls' teams from 13U through 18U, in Cardinal, Gold, and White tiers.</p>
+      </div>
+      <div class="ages reveal" role="list" aria-label="Age groups">
+        <div role="listitem">13<span>U</span></div>
+        <div role="listitem">14<span>U</span></div>
+        <div role="listitem">15<span>U</span></div>
+        <div role="listitem">16<span>U</span></div>
+        <div role="listitem">17<span>U</span></div>
+        <div role="listitem">18<span>U</span></div>
+      </div>
+      <div class="tiers reveal">
+        <span class="label">Tiers</span>
+        <span class="chip"><span class="swatch" style="background:#9A0000"></span>Cardinal</span>
+        <span class="chip"><span class="swatch" style="background:#FFCC00"></span>Gold</span>
+        <span class="chip"><span class="swatch" style="background:#FFFFFF"></span>White</span>
+      </div>
+      <p class="flag">Ask Jared: which age groups and tiers run for boys, and for girls</p>
+    </div>
+  </section>
+
+  <section id="register" style="background:var(--surface); border-block:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">(Tryouts &amp; Camps)</p>
+        <h2>Two ways onto the court.</h2>
+      </div>
+      <div class="programs">
+        <article class="program reveal">
+          <h3>Tryouts</h3>
+          <p>The path onto a 204 team for the season. Register your athlete, then come ready to play.</p>
+          <dl>
+            <div class="row"><dt>Dates</dt><dd class="ph">Ask Jared</dd></div>
+            <div class="row"><dt>Gym</dt><dd class="ph">Ask Jared</dd></div>
+            <div class="row"><dt>Fee</dt><dd class="ph">Ask Jared</dd></div>
+          </dl>
+          <a class="btn btn-red" href="#contact" data-program="Tryouts">Register for Tryouts</a>
+        </article>
+        <article class="program camps reveal">
+          <h3>Camps</h3>
+          <p>Extra court time with 204. Register your athlete for an upcoming camp.</p>
+          <dl>
+            <div class="row"><dt>Dates</dt><dd class="ph">Ask Jared</dd></div>
+            <div class="row"><dt>Ages</dt><dd class="ph">Ask Jared</dd></div>
+            <div class="row"><dt>Fee</dt><dd class="ph">Ask Jared</dd></div>
+          </dl>
+          <a class="btn btn-gold" href="#contact" data-program="Camp">Register for a Camp</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="coaches">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">(Coaches)</p>
+        <h2>Find your coach.</h2>
+        <p class="lede">Every team, every coach, one list.</p>
+      </div>
+      <div class="table-wrap reveal">
+        <table>
+          <thead><tr><th scope="col">Team</th><th scope="col">Boys' coach</th><th scope="col">Girls' coach</th></tr></thead>
+          <tbody>
+            <tr><td class="age">13U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
+            <tr><td class="age">14U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
+            <tr><td class="age">15U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
+            <tr><td class="age">16U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
+            <tr><td class="age">17U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
+            <tr><td class="age">18U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="flag">Still need: coach names and emails for every team</p>
+    </div>
+  </section>
+
+  <section id="about" style="background:var(--surface); border-block:1px solid var(--line);">
+    <div class="wrap about-grid">
+      <div class="copy reveal">
+        <p class="eyebrow">(About)</p>
+        <h2 style="margin-top:0.5rem;">Winnipeg's (204) since 2010.</h2>
+        <p style="margin-top:1.2rem;">We started 204 Volleyball Club in 2010 and grew into one of the largest clubs in Winnipeg. The 2027 season marks our 18th.</p>
+        <p>Our teams compete under Volleyball Manitoba, and 204 teams took the court at the 2025 Volleyball Canada Nationals, hosted right here in Winnipeg.</p>
+        <p class="flag">Still need: a line from Jared on what 204 stands for</p>
+      </div>
+      <div class="wordmark-tile reveal">
+        <img src="images/logo-wordmark.jpg" alt="(204) Volleyball wordmark" width="474" height="219" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">(In Action)</p>
+        <h2>Game day.</h2>
+      </div>
+      <div class="gallery reveal">
+        <div class="shot big">Action shot coming from Jared</div>
+        <div class="shot">Action shot</div>
+        <div class="shot">Action shot</div>
+        <div class="shot">Action shot</div>
+        <div class="shot">Action shot</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="background:var(--surface); border-block:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">(FAQ)</p>
+        <h2>Good to know.</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Who plays for 204?<span class="plus" aria-hidden="true">+</span></summary>
+          <p class="a">Boys and girls, on teams from 13U through 18U.</p>
+        </details>
+        <details>
+          <summary>When are tryouts?<span class="plus" aria-hidden="true">+</span></summary>
+          <p class="a"><span class="flag">Ask Jared: tryout dates and gym</span></p>
+        </details>
+        <details>
+          <summary>How do I register?<span class="plus" aria-hidden="true">+</span></summary>
+          <p class="a">Fill out the registration form at the bottom of this page and pick Tryouts or Camp. <span class="flag">Ask Jared: how registrations get confirmed and paid</span></p>
+        </details>
+        <details>
+          <summary>Which age group does my athlete play in?<span class="plus" aria-hidden="true">+</span></summary>
+          <p class="a">Age groups go by birth year, following Volleyball Manitoba categories. <span class="flag">Ask Jared: birth year chart for this season</span></p>
+        </details>
+        <details>
+          <summary>What does a season cost?<span class="plus" aria-hidden="true">+</span></summary>
+          <p class="a"><span class="flag">Ask Jared: season and camp fees</span></p>
+        </details>
+        <details>
+          <summary>How do I reach a coach?<span class="plus" aria-hidden="true">+</span></summary>
+          <p class="a">Every team's coach sits in the <a href="#coaches" style="color:var(--accent-text); font-weight:600;">Coaches</a> list, with an email for each.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap final-grid reveal">
+      <div>
+        <p class="eyebrow">(Next Season)</p>
+        <h2 style="margin-top:0.5rem;">Tryouts come first.</h2>
+        <p>Register your athlete for tryouts or a camp, and start the season with 204.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="#contact" data-program="Tryouts">Register for Tryouts</a>
+          <a class="btn btn-outline" href="tel:12049960675">Call (204) 996-0675</a>
+        </div>
+      </div>
+      <img src="images/logo-mark-gold.jpg" alt="" width="323" height="340" loading="lazy">
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">(Register)</p>
+        <h2 style="margin-top:0.5rem; margin-bottom:2rem;">Register or reach out.</h2>
+        <form class="reg" id="regForm">
+          <div class="field full">
+            <label for="f-program">Program</label>
+            <select id="f-program" name="program">
+              <option>Tryouts</option>
+              <option>Camp</option>
+              <option>General question</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-division">Team</label>
+            <select id="f-division" name="division">
+              <option>Boys</option>
+              <option>Girls</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-athlete">Athlete name</label><input id="f-athlete" name="athlete" type="text" required></div>
+          <div class="field"><label for="f-birth">Birth year</label><input id="f-birth" name="birth_year" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="e.g. 2011" required></div>
+          <div class="field">
+            <label for="f-age">Age group</label>
+            <select id="f-age" name="age_group">
+              <option>Not sure</option><option>13U</option><option>14U</option><option>15U</option><option>16U</option><option>17U</option><option>18U</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-parent">Parent or guardian</label><input id="f-parent" name="parent" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Anything the club should know?"></textarea></div>
+          <div class="form-actions">
+            <button class="btn btn-red" type="submit">Send Registration</button>
+            <p class="form-note">Demo form. Sends nothing yet, see setup notes.</p>
+          </div>
+        </form>
+        <div class="confirm" id="regConfirm" hidden>
+          <h3>Registration received</h3>
+          <p>Demo confirmation only, nothing was sent. Once connected, registrations land straight in the club inbox.</p>
+          <button class="btn btn-outline" type="button" id="regAgain">Register Another Athlete</button>
+        </div>
+      </div>
+      <div class="reveal">
+        <ul class="info">
+          <li><span class="k">Contact</span><span class="v">Jared Brown</span></li>
+          <li><span class="k">Phone</span><span class="v"><a href="tel:12049960675">(204) 996-0675</a></span></li>
+          <li><span class="k">Email</span><span class="v"><a href="mailto:b_jared@hotmail.com">b_jared@hotmail.com</a></span></li>
+          <li><span class="k">Instagram</span><span class="v"><a href="https://www.instagram.com/204volleyballclub/" target="_blank" rel="noopener">@204volleyballclub</a></span></li>
+          <li><span class="k">X</span><span class="v"><a href="https://x.com/204Volleyball" target="_blank" rel="noopener">@204Volleyball</a></span></li>
+          <li><span class="k">Based in</span><span class="v">Winnipeg, Manitoba</span></li>
+        </ul>
+        <p class="flag">Ask Jared: his title for the site</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo-mark-gold.jpg" alt="204 Volleyball Club logo" width="323" height="340" loading="lazy">
+      <p>Club volleyball in Winnipeg since 2010. Teams from 13U to 18U.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Club</h4>
+      <ul>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#coaches">Coaches</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Register</h4>
+      <ul>
+        <li><a href="#contact" data-program="Tryouts">Tryouts</a></li>
+        <li><a href="#contact" data-program="Camp">Camps</a></li>
+        <li><a href="tel:12049960675">(204) 996-0675</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/204volleyballclub/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://x.com/204Volleyball" target="_blank" rel="noopener">X</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span id="year"></span> 204 Volleyball Club, Winnipeg, Manitoba</span>
+    <span><a href="privacy.html">Privacy Policy</a><a href="privacy.html">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function () {
+    header.classList.toggle('compact', window.scrollY > 40);
+  }, { passive: true });
+
+  var hbtn = document.getElementById('hamburgerBtn');
+  var mmenu = document.getElementById('mobileMenu');
+  hbtn.addEventListener('click', function () {
+    var open = mmenu.classList.toggle('open');
+    hbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mmenu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      mmenu.classList.remove('open');
+      hbtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  var programSelect = document.getElementById('f-program');
+  document.querySelectorAll('[data-program]').forEach(function (el) {
+    el.addEventListener('click', function () { programSelect.value = el.getAttribute('data-program'); });
+  });
+
+  var regForm = document.getElementById('regForm');
+  var regConfirm = document.getElementById('regConfirm');
+  regForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    regForm.hidden = true;
+    regConfirm.hidden = false;
+  });
+  document.getElementById('regAgain').addEventListener('click', function () {
+    regForm.reset();
+    regConfirm.hidden = true;
+    regForm.hidden = false;
+  });
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
