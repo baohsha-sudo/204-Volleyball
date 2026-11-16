@@ -187,6 +187,14 @@
   td.tba { color: var(--muted); font-style: italic; }
   td.none { color: var(--muted); }
   th .swatch { display: inline-block; vertical-align: -1px; margin-right: 0.4rem; }
+  .coach-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.2rem; }
+  @media (max-width: 480px) { .coach-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; } }
+  .coach-card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+  .coach-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; background: #171313; }
+  .coach-meta { padding: 0.9rem 1rem 1.1rem; border-top: 4px solid var(--brand-red); display: grid; gap: 0.25rem; }
+  .coach-meta h3 { font-size: 1.35rem; }
+  .coach-team { display: flex; align-items: center; gap: 0.45rem; font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent-text); }
+  .coach-role { font-size: 0.92rem; color: var(--muted); }
 
   /* About */
   .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
@@ -196,11 +204,13 @@
   .wordmark-tile img { width: 100%; max-width: 380px; }
 
   /* Gallery */
-  .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: repeat(2, minmax(150px, 1fr)); gap: 1rem; }
-  @media (max-width: 700px) { .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: none; } }
-  .shot { background: var(--surface); border: 1px dashed var(--line); border-radius: 6px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; min-height: 150px; font-family: var(--font-display); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
-  .shot.big { grid-row: span 2; }
-  @media (max-width: 700px) { .shot.big { grid-column: span 2; grid-row: auto; min-height: 220px; } }
+  .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: clamp(150px, 20vw, 240px); gap: 1rem; margin: 0; }
+  @media (max-width: 700px) { .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; gap: 0.6rem; grid-auto-flow: dense; } }
+  .shot { margin: 0; border-radius: 6px; overflow: hidden; background: #171313; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; }
+  .shot.big { grid-column: span 2; grid-row: span 2; }
+  .shot.tall { grid-row: span 2; }
+  @media (max-width: 700px) { .shot.big { grid-column: span 2; grid-row: span 2; } }
 
   /* FAQ */
   .faq { max-width: 780px; border-top: 1px solid var(--line); }
@@ -419,23 +429,22 @@
       <div class="section-head reveal">
         <p class="eyebrow">(Coaches)</p>
         <h2>Find your coach.</h2>
-        <p class="lede">Every team, every head coach, one list.</p>
+        <p class="lede">Meet the 204 coaching staff and find your team's head coach.</p>
       </div>
-      <div class="table-wrap reveal">
-        <table>
-          <thead><tr><th scope="col">Age group</th><th scope="col"><span class="swatch sw-gold"></span>Gold</th><th scope="col"><span class="swatch sw-cardinal"></span>Cardinal</th><th scope="col"><span class="swatch sw-white"></span>White</th></tr></thead>
-          <tbody>
-            <tr><td class="age">13U</td><td class="coach">Zack Diboll</td><td class="tba">To be announced</td><td class="none">No team</td></tr>
-            <tr><td class="age">14U</td><td class="coach">Matt Klysh</td><td class="tba">To be announced</td><td class="tba">To be announced</td></tr>
-            <tr><td class="age">15U</td><td class="coach">Ethan Olfert</td><td class="coach">TJ Stroud</td><td class="tba">To be announced</td></tr>
-            <tr><td class="age">16U</td><td class="coach">Jared Brown</td><td class="coach">Jazz Gill</td><td class="tba">To be announced</td></tr>
-            <tr><td class="age">17U</td><td class="coach">Will Racano</td><td class="coach">DJ Seales</td><td class="none">No team</td></tr>
-            <tr><td class="age">18U</td><td class="coach">Don Dulder</td><td class="coach">Taylor Basaraba</td><td class="none">No team</td></tr>
-          </tbody>
-        </table>
+      <div class="coach-grid reveal" role="list" aria-label="Coaching staff">
+        <article class="coach-card" role="listitem"><img src="img/coaches/jared-brown.jpg" alt="Jared Brown" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Jared Brown</h3><p class="coach-team"><span class="swatch sw-gold"></span>16U Gold</p><p class="coach-role">Club Director · Co-Founder</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/zack-diboll.jpg" alt="Zack Diboll" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Zack Diboll</h3><p class="coach-team"><span class="swatch sw-gold"></span>13U Gold</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/matt-klysh.jpg" alt="Matt Klysh" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Matt Klysh</h3><p class="coach-team"><span class="swatch sw-gold"></span>14U Gold</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/tj-stroud.jpg" alt="TJ Stroud" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>TJ Stroud</h3><p class="coach-team"><span class="swatch sw-cardinal"></span>15U Cardinal</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/jazz-gill.jpg" alt="Jazz Gill" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Jazz Gill</h3><p class="coach-team"><span class="swatch sw-cardinal"></span>16U Cardinal</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/will-racano.jpg" alt="Will Racano" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Will Racano</h3><p class="coach-team"><span class="swatch sw-gold"></span>17U Gold</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/dj-seales.jpg" alt="DJ Seales" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>DJ Seales</h3><p class="coach-team"><span class="swatch sw-cardinal"></span>17U Cardinal</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/don-dulder.jpg" alt="Don Dulder" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Don Dulder</h3><p class="coach-team"><span class="swatch sw-gold"></span>18U Gold</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/taylor-basaraba.jpg" alt="Taylor Basaraba" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Taylor Basaraba</h3><p class="coach-team"><span class="swatch sw-cardinal"></span>18U Cardinal</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/jonas-mackenzie.jpg" alt="Jonas MacKenzie" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Jonas MacKenzie</h3><p class="coach-team">Coaching staff</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/kharsun-khamvongsa.jpg" alt="Kharsun Khamvongsa" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Kharsun Khamvongsa</h3><p class="coach-team">Coaching staff</p></div></article>
       </div>
-      <p class="fee-note reveal">To reach a coach, contact Jared Brown at (204) 996-0675 or b_jared@hotmail.com.</p>
-      <p class="flag">Still need: coach emails, plus names for the 5 teams marked To be announced</p>
+      <p class="fee-note reveal">15U Gold is coached by Ethan Olfert. Coaches for the remaining teams will be announced. To reach any coach, contact Jared Brown at <a href="tel:12049960675" style="color:var(--accent-text); font-weight:600;">(204) 996-0675</a> or <a href="mailto:b_jared@hotmail.com" style="color:var(--accent-text); font-weight:600;">b_jared@hotmail.com</a>.</p>
     </div>
   </section>
 
@@ -461,11 +470,11 @@
         <h2>Game day.</h2>
       </div>
       <div class="gallery reveal">
-        <div class="shot big">Action shot coming from Jared</div>
-        <div class="shot">Action shot</div>
-        <div class="shot">Action shot</div>
-        <div class="shot">Action shot</div>
-        <div class="shot">Action shot</div>
+        <figure class="shot big"><img src="img/action/spike.jpg" alt="A 204 player in cardinal elevates for a spike while teammates watch" width="1170" height="780" loading="lazy" style="object-position:60% 40%"></figure>
+        <figure class="shot tall"><img src="img/action/jump-serve.jpg" alt="A 204 player in gold rises for a jump serve at a tournament" width="1050" height="1400" loading="lazy" style="object-position:50% 30%"></figure>
+        <figure class="shot"><img src="img/action/block.jpg" alt="A 204 hitter attacks against a block at a Volleyball Canada event" width="1170" height="577" loading="lazy"></figure>
+        <figure class="shot"><img src="img/action/celebration-bench.jpg" alt="204 players in gold celebrate a point together" width="1170" height="780" loading="lazy" style="object-position:50% 30%"></figure>
+        <figure class="shot"><img src="img/action/at-the-net.jpg" alt="A 204 player waits at the net between rallies" width="600" height="400" loading="lazy" style="object-position:40% 40%"></figure>
       </div>
     </div>
   </section>
