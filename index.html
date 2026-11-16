@@ -3,11 +3,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>204 Volleyball Club</title>
-<meta name="description" content="204 Volleyball Club, club volleyball in Winnipeg since 2010. Teams from 13U to 18U, tryouts, camps, and coach contacts.">
+<meta name="description" content="204 Volleyball Club, boys' and girls' club volleyball in Winnipeg since 2010. 15 teams from 13U to 18U, tryouts at St. Paul's, summer and fall camps, and coach contacts.">
 <meta property="og:title" content="204 Volleyball Club">
-<meta property="og:description" content="Club volleyball in Winnipeg since 2010. Teams from 13U to 18U, tryouts, and camps.">
+<meta property="og:description" content="Club volleyball in Winnipeg since 2010. 15 teams from 13U to 18U, tryouts, and camps.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="club-photo.jpg">
+<meta property="og:image" content="https://204volleyball.com/club-photo.jpg">
+<meta property="og:url" content="https://204volleyball.com/">
+<link rel="canonical" href="https://204volleyball.com/">
 <link rel="icon" href="logo-mark-gold.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +21,12 @@
   "name": "204 Volleyball Club",
   "sport": "Volleyball",
   "foundingDate": "2010",
+  "founder": [{ "@type": "Person", "name": "Dan Gilbert" }, { "@type": "Person", "name": "Jared Brown" }],
   "areaServed": "Winnipeg, Manitoba",
   "telephone": "+1-204-996-0675",
   "email": "b_jared@hotmail.com",
-  "logo": "logo-mark-gold.jpg",
+  "url": "https://204volleyball.com/",
+  "logo": "https://204volleyball.com/logo-mark-gold.jpg",
   "sameAs": ["https://www.instagram.com/204volleyballclub/", "https://x.com/204Volleyball"]
 }
 </script>
@@ -143,16 +147,22 @@
   .photo-band figcaption { position: absolute; left: 1.5rem; bottom: 1.2rem; background: var(--brand-red); color: var(--on-red); font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.35rem 0.8rem; border-radius: 3px; }
 
   /* Teams */
-  .ages { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
-  @media (max-width: 700px) { .ages { grid-template-columns: repeat(3, 1fr); } }
-  .ages div { padding: 1.4rem 0.5rem; text-align: center; border-left: 1px solid var(--line); font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--ink); line-height: 1; }
-  .ages div:first-child { border-left: none; }
-  @media (max-width: 700px) { .ages div:nth-child(3n + 1) { border-left: none; } .ages div:nth-child(n + 4) { border-top: 1px solid var(--line); } }
-  .ages span { color: var(--accent-text); font-size: 0.55em; }
-  .tiers { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.4rem; margin-top: 1.6rem; }
-  .tiers .label { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-  .chip { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-transform: uppercase; color: var(--ink); }
-  .swatch { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--line); }
+  .age-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem; }
+  @media (max-width: 1060px) { .age-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .age-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .age-card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1.3rem 1.2rem; display: grid; gap: 0.9rem; align-content: start; }
+  .age-num { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.6rem, 5vw, 3.2rem); color: var(--ink); line-height: 1; }
+  .age-num span { color: var(--accent-text); font-size: 0.55em; }
+  .age-card dl { margin: 0; display: grid; gap: 0.6rem; }
+  .age-card dt { font-family: var(--font-display); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .age-card dd { margin: 0; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .team-dots { display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; }
+  .team-dot { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .swatch { width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--line); flex-shrink: 0; }
+  .sw-gold { background: #FFCC00; }
+  .sw-cardinal { background: #9A0000; }
+  .sw-white { background: #FFFFFF; }
+  .fee-note { margin-top: 1.4rem; font-size: 0.95rem; color: var(--muted); max-width: 64ch; }
 
   /* Register programs */
   .programs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
@@ -173,6 +183,10 @@
   td { padding: 1rem 1.2rem; border-bottom: 1px solid var(--line); vertical-align: middle; }
   tr:last-child td { border-bottom: none; }
   td.age { font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: var(--ink); width: 7rem; }
+  td.coach { font-weight: 600; color: var(--ink); }
+  td.tba { color: var(--muted); font-style: italic; }
+  td.none { color: var(--muted); }
+  th .swatch { display: inline-block; vertical-align: -1px; margin-right: 0.4rem; }
 
   /* About */
   .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
@@ -211,20 +225,13 @@
   /* Contact / registration */
   .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
   @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
-  form.reg { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.2rem; }
-  form.reg[hidden] { display: none; }
-  @media (max-width: 600px) { form.reg { grid-template-columns: 1fr; } }
-  .field { display: flex; flex-direction: column; gap: 0.35rem; }
-  .field.full { grid-column: 1 / -1; }
-  .field label { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.95rem; color: var(--ink); }
-  .field input, .field select, .field textarea { font-family: var(--font-body); font-size: 1rem; min-height: 48px; padding: 0.7rem 0.85rem; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink); }
-  .field textarea { min-height: 110px; resize: vertical; }
-  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent-text); }
-  .form-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
-  .form-note { font-size: 0.9rem; color: var(--muted); }
-  .confirm { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--gold); border-radius: 6px; padding: 1.6rem 1.8rem; }
-  .confirm p { margin-top: 0.6rem; }
-  .confirm .btn { margin-top: 1.2rem; }
+  .reg-cta { background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--brand-red); border-radius: 6px; padding: 1.8rem; display: grid; gap: 1rem; }
+  .reg-cta h3 { font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+  .reg-cta dl { margin: 0; }
+  .reg-cta .row { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.6rem; border-top: 1px solid var(--line); }
+  .reg-cta dt { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+  .reg-cta dd { margin: 0; text-align: right; }
+  .reg-cta .btn { justify-self: start; }
   .info { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
   .info li { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
   .info .k { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
@@ -268,7 +275,7 @@
         <li><a class="navlink" href="#faq">FAQ</a></li>
         <li><a class="navlink" href="#contact">Contact</a></li>
       </ul>
-      <a class="btn btn-red" href="#contact" data-program="Tryouts">Register</a>
+      <a class="btn btn-red" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Register</a>
     </nav>
     <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -280,7 +287,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a class="btn btn-red" href="#contact" data-program="Tryouts">Register</a></li>
+      <li><a class="btn btn-red" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Register</a></li>
     </ul>
   </div>
 </header>
@@ -294,7 +301,7 @@
         <h1>Club volleyball in Winnipeg, <span class="paren">13U to 18U.</span></h1>
         <p class="sub">Boys' and girls' teams, tryouts, and camps from one of the largest volleyball clubs in Winnipeg. Find your team, find your coach, and register in one place.</p>
         <div class="cta-row">
-          <a class="btn btn-red" href="#contact" data-program="Tryouts">Register for Tryouts</a>
+          <a class="btn btn-red" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Register for Tryouts</a>
           <a class="btn btn-outline" href="#register">See Camps</a>
         </div>
       </div>
@@ -302,9 +309,9 @@
         <img src="logo-mark-gold.jpg" alt="" width="323" height="340">
         <dl>
           <div class="row"><dt>Founded</dt><dd>2010</dd></div>
-          <div class="row"><dt>Age groups</dt><dd>13U to 18U</dd></div>
+          <div class="row"><dt>Teams</dt><dd>15, from 13U to 18U</dd></div>
           <div class="row"><dt>Member of</dt><dd>Volleyball Manitoba</dd></div>
-          <div class="row"><dt>Nationals</dt><dd>2025, Winnipeg</dd></div>
+          <div class="row"><dt>2027 season</dt><dd>Our 18th</dd></div>
         </dl>
       </aside>
     </div>
@@ -319,24 +326,60 @@
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">(Teams)</p>
-        <h2>Six age groups. Three tiers.</h2>
-        <p class="lede">Boys' and girls' teams from 13U through 18U, in Cardinal, Gold, and White tiers.</p>
+        <h2>15 teams. One standard.</h2>
+        <p class="lede">Boys' and girls' teams from 13U through 18U. Gold, Cardinal, and White are team names. Every 204 team competes at the same level. Your athlete's birth year sets the age group.</p>
       </div>
-      <div class="ages reveal" role="list" aria-label="Age groups">
-        <div role="listitem">13<span>U</span></div>
-        <div role="listitem">14<span>U</span></div>
-        <div role="listitem">15<span>U</span></div>
-        <div role="listitem">16<span>U</span></div>
-        <div role="listitem">17<span>U</span></div>
-        <div role="listitem">18<span>U</span></div>
+      <div class="age-grid reveal" role="list" aria-label="Age groups">
+        <article class="age-card" role="listitem">
+          <p class="age-num">13<span>U</span></p>
+          <dl>
+            <div><dt>Born</dt><dd>2014 or later</dd></div>
+            <div><dt>Teams</dt><dd class="team-dots"><span class="team-dot"><span class="swatch sw-gold"></span>Gold</span><span class="team-dot"><span class="swatch sw-cardinal"></span>Cardinal</span></dd></div>
+            <div><dt>Season fee</dt><dd>$1,875</dd></div>
+          </dl>
+        </article>
+        <article class="age-card" role="listitem">
+          <p class="age-num">14<span>U</span></p>
+          <dl>
+            <div><dt>Born</dt><dd>2013</dd></div>
+            <div><dt>Teams</dt><dd class="team-dots"><span class="team-dot"><span class="swatch sw-gold"></span>Gold</span><span class="team-dot"><span class="swatch sw-cardinal"></span>Cardinal</span><span class="team-dot"><span class="swatch sw-white"></span>White</span></dd></div>
+            <div><dt>Season fee</dt><dd>$2,625</dd></div>
+          </dl>
+        </article>
+        <article class="age-card" role="listitem">
+          <p class="age-num">15<span>U</span></p>
+          <dl>
+            <div><dt>Born</dt><dd>2012</dd></div>
+            <div><dt>Teams</dt><dd class="team-dots"><span class="team-dot"><span class="swatch sw-gold"></span>Gold</span><span class="team-dot"><span class="swatch sw-cardinal"></span>Cardinal</span><span class="team-dot"><span class="swatch sw-white"></span>White</span></dd></div>
+            <div><dt>Season fee</dt><dd>$3,000</dd></div>
+          </dl>
+        </article>
+        <article class="age-card" role="listitem">
+          <p class="age-num">16<span>U</span></p>
+          <dl>
+            <div><dt>Born</dt><dd>2011</dd></div>
+            <div><dt>Teams</dt><dd class="team-dots"><span class="team-dot"><span class="swatch sw-gold"></span>Gold</span><span class="team-dot"><span class="swatch sw-cardinal"></span>Cardinal</span><span class="team-dot"><span class="swatch sw-white"></span>White</span></dd></div>
+            <div><dt>Season fee</dt><dd>$3,000</dd></div>
+          </dl>
+        </article>
+        <article class="age-card" role="listitem">
+          <p class="age-num">17<span>U</span></p>
+          <dl>
+            <div><dt>Born</dt><dd>2010</dd></div>
+            <div><dt>Teams</dt><dd class="team-dots"><span class="team-dot"><span class="swatch sw-gold"></span>Gold</span><span class="team-dot"><span class="swatch sw-cardinal"></span>Cardinal</span></dd></div>
+            <div><dt>Season fee</dt><dd>$3,500</dd></div>
+          </dl>
+        </article>
+        <article class="age-card" role="listitem">
+          <p class="age-num">18<span>U</span></p>
+          <dl>
+            <div><dt>Born</dt><dd>2009</dd></div>
+            <div><dt>Teams</dt><dd class="team-dots"><span class="team-dot"><span class="swatch sw-gold"></span>Gold</span><span class="team-dot"><span class="swatch sw-cardinal"></span>Cardinal</span></dd></div>
+            <div><dt>Season fee</dt><dd>$3,500</dd></div>
+          </dl>
+        </article>
       </div>
-      <div class="tiers reveal">
-        <span class="label">Tiers</span>
-        <span class="chip"><span class="swatch" style="background:#9A0000"></span>Cardinal</span>
-        <span class="chip"><span class="swatch" style="background:#FFCC00"></span>Gold</span>
-        <span class="chip"><span class="swatch" style="background:#FFFFFF"></span>White</span>
-      </div>
-      <p class="flag">Ask Jared: which age groups and tiers run for boys, and for girls</p>
+      <p class="fee-note reveal">Season fees are estimates. The club confirms each season's fees at the club meeting in December. All payments go by e-transfer.</p>
     </div>
   </section>
 
@@ -349,23 +392,23 @@
       <div class="programs">
         <article class="program reveal">
           <h3>Tryouts</h3>
-          <p>The path onto a 204 team for the season. Register your athlete, then come ready to play.</p>
+          <p>The path onto a 204 team for the season. Register your athlete through the tryout form, then come ready to play.</p>
           <dl>
-            <div class="row"><dt>Dates</dt><dd class="ph">Ask Jared</dd></div>
-            <div class="row"><dt>Gym</dt><dd class="ph">Ask Jared</dd></div>
-            <div class="row"><dt>Fee</dt><dd class="ph">Ask Jared</dd></div>
+            <div class="row"><dt>Gym</dt><dd>St. Paul's</dd></div>
+            <div class="row"><dt>Fee</dt><dd>$40</dd></div>
+            <div class="row"><dt>Dates</dt><dd>Listed on the tryout form</dd></div>
+            <div class="row"><dt>Payment</dt><dd>E-transfer</dd></div>
           </dl>
-          <a class="btn btn-red" href="#contact" data-program="Tryouts">Register for Tryouts</a>
+          <a class="btn btn-red" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Register for Tryouts</a>
         </article>
         <article class="program camps reveal">
           <h3>Camps</h3>
-          <p>Extra court time with 204. Register your athlete for an upcoming camp.</p>
+          <p>Two camps every year, with extra court time and coaching from 204.</p>
           <dl>
-            <div class="row"><dt>Dates</dt><dd class="ph">Ask Jared</dd></div>
-            <div class="row"><dt>Ages</dt><dd class="ph">Ask Jared</dd></div>
-            <div class="row"><dt>Fee</dt><dd class="ph">Ask Jared</dd></div>
+            <div class="row"><dt>Summer Camp</dt><dd>End of August, Soul Sanctuary</dd></div>
+            <div class="row"><dt>Fall Camp</dt><dd>October and November, Balmoral Hall</dd></div>
           </dl>
-          <a class="btn btn-gold" href="#contact" data-program="Camp">Register for a Camp</a>
+          <a class="btn btn-gold" href="#contact">Ask About Camps</a>
         </article>
       </div>
     </div>
@@ -376,22 +419,23 @@
       <div class="section-head reveal">
         <p class="eyebrow">(Coaches)</p>
         <h2>Find your coach.</h2>
-        <p class="lede">Every team, every coach, one list.</p>
+        <p class="lede">Every team, every head coach, one list.</p>
       </div>
       <div class="table-wrap reveal">
         <table>
-          <thead><tr><th scope="col">Team</th><th scope="col">Boys' coach</th><th scope="col">Girls' coach</th></tr></thead>
+          <thead><tr><th scope="col">Age group</th><th scope="col"><span class="swatch sw-gold"></span>Gold</th><th scope="col"><span class="swatch sw-cardinal"></span>Cardinal</th><th scope="col"><span class="swatch sw-white"></span>White</th></tr></thead>
           <tbody>
-            <tr><td class="age">13U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
-            <tr><td class="age">14U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
-            <tr><td class="age">15U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
-            <tr><td class="age">16U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
-            <tr><td class="age">17U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
-            <tr><td class="age">18U</td><td class="ph">Name · email</td><td class="ph">Name · email</td></tr>
+            <tr><td class="age">13U</td><td class="coach">Zack Diboll</td><td class="tba">To be announced</td><td class="none">No team</td></tr>
+            <tr><td class="age">14U</td><td class="coach">Matt Klysh</td><td class="tba">To be announced</td><td class="tba">To be announced</td></tr>
+            <tr><td class="age">15U</td><td class="coach">Ethan Olfert</td><td class="coach">TJ Stroud</td><td class="tba">To be announced</td></tr>
+            <tr><td class="age">16U</td><td class="coach">Jared Brown</td><td class="coach">Jazz Gill</td><td class="tba">To be announced</td></tr>
+            <tr><td class="age">17U</td><td class="coach">Will Racano</td><td class="coach">DJ Seales</td><td class="none">No team</td></tr>
+            <tr><td class="age">18U</td><td class="coach">Don Dulder</td><td class="coach">Taylor Basaraba</td><td class="none">No team</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="flag">Still need: coach names and emails for every team</p>
+      <p class="fee-note reveal">To reach a coach, contact Jared Brown at (204) 996-0675 or b_jared@hotmail.com.</p>
+      <p class="flag">Still need: coach emails, plus names for the 5 teams marked To be announced</p>
     </div>
   </section>
 
@@ -400,9 +444,9 @@
       <div class="copy reveal">
         <p class="eyebrow">(About)</p>
         <h2 style="margin-top:0.5rem;">Winnipeg's (204) since 2010.</h2>
-        <p style="margin-top:1.2rem;">We started 204 Volleyball Club in 2010 and grew into one of the largest clubs in Winnipeg. The 2027 season marks our 18th.</p>
-        <p>Our teams compete under Volleyball Manitoba, and 204 teams took the court at the 2025 Volleyball Canada Nationals, hosted right here in Winnipeg.</p>
-        <p class="flag">Still need: a line from Jared on what 204 stands for</p>
+        <p style="margin-top:1.2rem;">Dan Gilbert and Jared Brown founded 204 Volleyball Club for the 2010 season. They set out to help athletes get recruited for post-secondary volleyball and to prepare them for life after sport.</p>
+        <p>204 athletes train in the weight room as well as on the court. The club built a strong culture and a real pride in wearing the cardinal and gold. Over the years, 204 teams have won Provincial and National medals.</p>
+        <p>Our teams compete under Volleyball Manitoba. 2027 marks our 18th season.</p>
       </div>
       <div class="wordmark-tile reveal">
         <img src="logo-wordmark.jpg" alt="(204) Volleyball wordmark" width="474" height="219" loading="lazy">
@@ -435,27 +479,31 @@
       <div class="faq reveal">
         <details>
           <summary>Who plays for 204?<span class="plus" aria-hidden="true">+</span></summary>
-          <p class="a">Boys and girls, on teams from 13U through 18U.</p>
+          <p class="a">Boys and girls from 13U through 18U, across 15 teams. Every team competes at the same level.</p>
         </details>
         <details>
-          <summary>When are tryouts?<span class="plus" aria-hidden="true">+</span></summary>
-          <p class="a"><span class="flag">Ask Jared: tryout dates and gym</span></p>
+          <summary>When and where are tryouts?<span class="plus" aria-hidden="true">+</span></summary>
+          <p class="a">All tryouts run at St. Paul's and cost $40. The <a href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener" style="color:var(--accent-text); font-weight:600;">tryout form</a> lists every date.</p>
         </details>
         <details>
-          <summary>How do I register?<span class="plus" aria-hidden="true">+</span></summary>
-          <p class="a">Fill out the registration form at the bottom of this page and pick Tryouts or Camp. <span class="flag">Ask Jared: how registrations get confirmed and paid</span></p>
+          <summary>How do I register and pay?<span class="plus" aria-hidden="true">+</span></summary>
+          <p class="a">Fill out the <a href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener" style="color:var(--accent-text); font-weight:600;">tryout form</a>. All payments go by e-transfer.</p>
         </details>
         <details>
           <summary>Which age group does my athlete play in?<span class="plus" aria-hidden="true">+</span></summary>
-          <p class="a">Age groups go by birth year, following Volleyball Manitoba categories. <span class="flag">Ask Jared: birth year chart for this season</span></p>
+          <p class="a">Birth year decides the age group. Born 2014 or later: 13U. Born 2013: 14U. Born 2012: 15U. Born 2011: 16U. Born 2010: 17U. Born 2009: 18U.</p>
         </details>
         <details>
           <summary>What does a season cost?<span class="plus" aria-hidden="true">+</span></summary>
-          <p class="a"><span class="flag">Ask Jared: season and camp fees</span></p>
+          <p class="a">Estimated fees: 13U $1,875. 14U $2,625. 15U and 16U $3,000. 17U and 18U $3,500. The club confirms fees each season at the club meeting in December.</p>
+        </details>
+        <details>
+          <summary>When are camps?<span class="plus" aria-hidden="true">+</span></summary>
+          <p class="a">Summer Camp runs at the end of August at Soul Sanctuary. Fall Camp runs in October and November at Balmoral Hall.</p>
         </details>
         <details>
           <summary>How do I reach a coach?<span class="plus" aria-hidden="true">+</span></summary>
-          <p class="a">Every team's coach sits in the <a href="#coaches" style="color:var(--accent-text); font-weight:600;">Coaches</a> list, with an email for each.</p>
+          <p class="a">Find your team's head coach in the <a href="#coaches" style="color:var(--accent-text); font-weight:600;">Coaches</a> list, then contact Jared Brown at (204) 996-0675 or b_jared@hotmail.com.</p>
         </details>
       </div>
     </div>
@@ -466,9 +514,9 @@
       <div>
         <p class="eyebrow">(Next Season)</p>
         <h2 style="margin-top:0.5rem;">Tryouts come first.</h2>
-        <p>Register your athlete for tryouts or a camp, and start the season with 204.</p>
+        <p>Register your athlete for tryouts and start the season with 204.</p>
         <div class="cta-row">
-          <a class="btn btn-gold" href="#contact" data-program="Tryouts">Register for Tryouts</a>
+          <a class="btn btn-gold" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Register for Tryouts</a>
           <a class="btn btn-outline" href="tel:12049960675">Call (204) 996-0675</a>
         </div>
       </div>
@@ -481,55 +529,27 @@
       <div class="reveal">
         <p class="eyebrow">(Register)</p>
         <h2 style="margin-top:0.5rem; margin-bottom:2rem;">Register or reach out.</h2>
-        <form class="reg" id="regForm">
-          <div class="field full">
-            <label for="f-program">Program</label>
-            <select id="f-program" name="program">
-              <option>Tryouts</option>
-              <option>Camp</option>
-              <option>General question</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-division">Team</label>
-            <select id="f-division" name="division">
-              <option>Boys</option>
-              <option>Girls</option>
-            </select>
-          </div>
-          <div class="field"><label for="f-athlete">Athlete name</label><input id="f-athlete" name="athlete" type="text" required></div>
-          <div class="field"><label for="f-birth">Birth year</label><input id="f-birth" name="birth_year" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="e.g. 2011" required></div>
-          <div class="field">
-            <label for="f-age">Age group</label>
-            <select id="f-age" name="age_group">
-              <option>Not sure</option><option>13U</option><option>14U</option><option>15U</option><option>16U</option><option>17U</option><option>18U</option>
-            </select>
-          </div>
-          <div class="field"><label for="f-parent">Parent or guardian</label><input id="f-parent" name="parent" type="text" autocomplete="name" required></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
-          <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Anything the club should know?"></textarea></div>
-          <div class="form-actions">
-            <button class="btn btn-red" type="submit">Send Registration</button>
-            <p class="form-note">Demo form. Sends nothing yet, see setup notes.</p>
-          </div>
-        </form>
-        <div class="confirm" id="regConfirm" hidden>
-          <h3>Registration received</h3>
-          <p>Demo confirmation only, nothing was sent. Once connected, registrations land straight in the club inbox.</p>
-          <button class="btn btn-outline" type="button" id="regAgain">Register Another Athlete</button>
+        <div class="reg-cta">
+          <h3>Tryout registration</h3>
+          <p>Register your athlete through the club's tryout form. The form lists every tryout date.</p>
+          <dl>
+            <div class="row"><dt>Gym</dt><dd>St. Paul's</dd></div>
+            <div class="row"><dt>Fee</dt><dd>$40</dd></div>
+            <div class="row"><dt>Payment</dt><dd>E-transfer</dd></div>
+          </dl>
+          <a class="btn btn-red" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Open the Tryout Form</a>
         </div>
       </div>
       <div class="reveal">
         <ul class="info">
           <li><span class="k">Contact</span><span class="v">Jared Brown</span></li>
+          <li><span class="k">Role</span><span class="v">Club Director, Co-Founder, 16U Gold Head Coach</span></li>
           <li><span class="k">Phone</span><span class="v"><a href="tel:12049960675">(204) 996-0675</a></span></li>
           <li><span class="k">Email</span><span class="v"><a href="mailto:b_jared@hotmail.com">b_jared@hotmail.com</a></span></li>
           <li><span class="k">Instagram</span><span class="v"><a href="https://www.instagram.com/204volleyballclub/" target="_blank" rel="noopener">@204volleyballclub</a></span></li>
           <li><span class="k">X</span><span class="v"><a href="https://x.com/204Volleyball" target="_blank" rel="noopener">@204Volleyball</a></span></li>
           <li><span class="k">Based in</span><span class="v">Winnipeg, Manitoba</span></li>
         </ul>
-        <p class="flag">Ask Jared: his title for the site</p>
       </div>
     </div>
   </section>
@@ -540,7 +560,7 @@
   <div class="wrap footer-grid">
     <div class="footer-brand">
       <img src="logo-mark-gold.jpg" alt="204 Volleyball Club logo" width="323" height="340" loading="lazy">
-      <p>Club volleyball in Winnipeg since 2010. Teams from 13U to 18U.</p>
+      <p>Club volleyball in Winnipeg since 2010. 15 teams from 13U to 18U.</p>
     </div>
     <div class="footer-col">
       <h4>Club</h4>
@@ -554,8 +574,8 @@
     <div class="footer-col">
       <h4>Register</h4>
       <ul>
-        <li><a href="#contact" data-program="Tryouts">Tryouts</a></li>
-        <li><a href="#contact" data-program="Camp">Camps</a></li>
+        <li><a href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Tryout form</a></li>
+        <li><a href="#register">Camps</a></li>
         <li><a href="tel:12049960675">(204) 996-0675</a></li>
       </ul>
     </div>
@@ -593,24 +613,6 @@
       mmenu.classList.remove('open');
       hbtn.setAttribute('aria-expanded', 'false');
     });
-  });
-
-  var programSelect = document.getElementById('f-program');
-  document.querySelectorAll('[data-program]').forEach(function (el) {
-    el.addEventListener('click', function () { programSelect.value = el.getAttribute('data-program'); });
-  });
-
-  var regForm = document.getElementById('regForm');
-  var regConfirm = document.getElementById('regConfirm');
-  regForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    regForm.hidden = true;
-    regConfirm.hidden = false;
-  });
-  document.getElementById('regAgain').addEventListener('click', function () {
-    regForm.reset();
-    regConfirm.hidden = true;
-    regForm.hidden = false;
   });
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
