@@ -126,19 +126,24 @@
   }
 
   /* Hero */
-  .hero { padding-top: clamp(2.5rem, 6vw, 4.5rem); padding-bottom: clamp(2rem, 4vw, 3rem); }
-  .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
-  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
-  .hero h1 { margin-top: 0.8rem; }
-  .hero h1 .paren { color: var(--accent-text); }
-  .hero .sub { margin-top: 1.3rem; font-size: 1.2rem; max-width: 44ch; }
+  .hero { position: relative; isolation: isolate; overflow: hidden; background: #171313; min-height: min(78vh, 680px); display: flex; align-items: flex-end; padding-block: clamp(5rem, 12vw, 9rem) clamp(2.5rem, 6vw, 4.5rem); }
+  .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 35%; z-index: -2; }
+  .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(23,19,19,0.9) 0%, rgba(23,19,19,0.7) 45%, rgba(23,19,19,0.15) 100%), linear-gradient(0deg, rgba(23,19,19,0.75) 0%, transparent 45%); }
+  @media (max-width: 700px) { .hero { min-height: 560px; } .hero-bg { object-position: 72% 30%; } .hero::after { background: linear-gradient(0deg, rgba(23,19,19,0.92) 10%, rgba(23,19,19,0.45) 70%, rgba(23,19,19,0.25) 100%); } }
+  .hero-inner { width: 100%; }
+  .hero .eyebrow { color: var(--gold); }
+  .hero h1 { margin-top: 0.8rem; color: #FFFFFF; max-width: 13ch; }
+  .hero h1 .paren { color: var(--gold); }
+  .hero .sub { margin-top: 1.3rem; font-size: 1.2rem; max-width: 42ch; color: rgba(255,255,255,0.88); }
   .cta-row { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2rem; }
-  .club-card { background: var(--brand-red); color: var(--on-red); border-radius: 8px; padding: 1.6rem 1.6rem 1.4rem; box-shadow: 0 30px 60px -32px rgba(60, 0, 0, 0.55); }
-  .club-card img { width: 62%; max-width: 220px; margin: 0 auto 1rem; }
-  .club-card dl { margin: 0; display: grid; gap: 0; }
-  .club-card .row { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.65rem; border-top: 1px solid rgba(255, 255, 255, 0.22); }
-  .club-card dt { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.95rem; color: rgba(255, 255, 255, 0.78); }
-  .club-card dd { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--gold); text-align: right; }
+  .btn-ghost { background: transparent; color: #FFFFFF; border-color: rgba(255,255,255,0.5); }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .facts { background: var(--brand-red); color: var(--on-red); }
+  .facts-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; margin-block: 0; padding-block: 1.1rem; }
+  .facts-row div { display: flex; flex-direction: column; }
+  .facts-row dt { font-family: var(--font-display); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.75); }
+  .facts-row dd { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; color: var(--gold); }
+  @media (max-width: 560px) { .facts-row { display: grid; grid-template-columns: 1fr 1fr; } }
 
   /* Photo band */
   .photo-band { position: relative; margin: 0; }
@@ -223,25 +228,20 @@
 
   /* Final CTA */
   .final { background: var(--brand-red); color: var(--on-red); }
-  .final-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
-  @media (max-width: 800px) { .final-grid { grid-template-columns: 1fr; } }
   .final .eyebrow { color: var(--gold); }
   .final h2 { color: var(--on-red); }
   .final p { margin-top: 1rem; font-size: 1.15rem; color: rgba(255, 255, 255, 0.86); max-width: 46ch; }
   .final .btn-outline { color: var(--on-red); border-color: rgba(255, 255, 255, 0.45); }
   .final .btn-outline:hover { color: var(--gold); border-color: var(--gold); }
-  .final img { width: 150px; }
+  .final .info { border-top-color: rgba(255, 255, 255, 0.25); }
+  .final .info li { border-bottom-color: rgba(255, 255, 255, 0.25); }
+  .final .info .k { color: rgba(255, 255, 255, 0.72); }
+  .final .info .v { color: #FFFFFF; }
+  .final .info a { color: var(--gold); }
 
   /* Contact / registration */
   .contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
   @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
-  .reg-cta { background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--brand-red); border-radius: 6px; padding: 1.8rem; display: grid; gap: 1rem; }
-  .reg-cta h3 { font-size: 2rem; font-weight: 800; text-transform: uppercase; }
-  .reg-cta dl { margin: 0; }
-  .reg-cta .row { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.6rem; border-top: 1px solid var(--line); }
-  .reg-cta dt { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
-  .reg-cta dd { margin: 0; text-align: right; }
-  .reg-cta .btn { justify-self: start; }
   .info { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
   .info li { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1rem; border-bottom: 1px solid var(--line); }
   .info .k { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
@@ -305,27 +305,27 @@
 <main id="main">
 
   <section class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div class="reveal">
-        <p class="eyebrow">(204) Volleyball Club · Est. 2010</p>
-        <h1>Club volleyball in Winnipeg, <span class="paren">13U to 18U.</span></h1>
-        <p class="sub">Boys' and girls' teams, tryouts, and camps from one of the largest volleyball clubs in Winnipeg. Find your team, find your coach, and register in one place.</p>
-        <div class="cta-row">
-          <a class="btn btn-red" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Register for Tryouts</a>
-          <a class="btn btn-outline" href="#register">See Camps</a>
-        </div>
+    <img class="hero-bg" src="img/action/spike.jpg" alt="" width="1170" height="780" fetchpriority="high">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">(204) Volleyball Club · Winnipeg</p>
+      <h1>Club volleyball in Winnipeg, <span class="paren">13U to 18U</span></h1>
+      <p class="sub">Boys' and girls' teams, tryouts, and camps from one of the largest volleyball clubs in Winnipeg.</p>
+      <div class="cta-row">
+        <a class="btn btn-red" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Register for Tryouts</a>
+        <a class="btn btn-ghost" href="#teams">Find Your Team</a>
       </div>
-      <aside class="club-card reveal" aria-label="Club facts">
-        <img src="logo-mark-gold.jpg" alt="" width="323" height="340">
-        <dl>
-          <div class="row"><dt>Founded</dt><dd>2010</dd></div>
-          <div class="row"><dt>Teams</dt><dd>15, from 13U to 18U</dd></div>
-          <div class="row"><dt>Member of</dt><dd>Volleyball Manitoba</dd></div>
-          <div class="row"><dt>2027 season</dt><dd>Our 18th</dd></div>
-        </dl>
-      </aside>
     </div>
   </section>
+
+  <div class="facts" aria-label="Club facts">
+    <dl class="wrap facts-row">
+      <div><dt>Founded</dt><dd>2010</dd></div>
+      <div><dt>Teams</dt><dd>15</dd></div>
+      <div><dt>Ages</dt><dd>13U–18U</dd></div>
+      <div><dt>2027 season</dt><dd>Our 18th</dd></div>
+      <div><dt>Member of</dt><dd>Volleyball Manitoba</dd></div>
+    </dl>
+  </div>
 
   <figure class="photo-band">
     <img src="club-photo.jpg" alt="Athletes, coaches, and staff of 204 Volleyball Club together in a gym" width="1800" height="1197">
@@ -335,7 +335,7 @@
   <section id="teams">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">(Teams)</p>
+        <p class="eyebrow">Teams</p>
         <h2>15 teams. One standard.</h2>
         <p class="lede">Boys' and girls' teams from 13U through 18U. Gold, Cardinal, and White are team names. Every 204 team competes at the same level. Your athlete's birth year sets the age group.</p>
       </div>
@@ -396,8 +396,8 @@
   <section id="register" style="background:var(--surface); border-block:1px solid var(--line);">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">(Tryouts &amp; Camps)</p>
-        <h2>Two ways onto the court.</h2>
+        <p class="eyebrow">Tryouts &amp; camps</p>
+        <h2>How to join 204</h2>
       </div>
       <div class="programs">
         <article class="program reveal">
@@ -427,9 +427,9 @@
   <section id="coaches">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">(Coaches)</p>
-        <h2>Find your coach.</h2>
-        <p class="lede">Meet the 204 coaching staff and find your team's head coach.</p>
+        <p class="eyebrow">Coaches</p>
+        <h2>Meet the coaches</h2>
+        <p class="lede">Head coaches for every 204 team, plus the rest of our staff.</p>
       </div>
       <div class="coach-grid reveal" role="list" aria-label="Coaching staff">
         <article class="coach-card" role="listitem"><img src="img/coaches/jared-brown.jpg" alt="Jared Brown" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Jared Brown</h3><p class="coach-team"><span class="swatch sw-gold"></span>16U Gold</p><p class="coach-role">Club Director · Co-Founder</p></div></article>
@@ -451,8 +451,8 @@
   <section id="about" style="background:var(--surface); border-block:1px solid var(--line);">
     <div class="wrap about-grid">
       <div class="copy reveal">
-        <p class="eyebrow">(About)</p>
-        <h2 style="margin-top:0.5rem;">Winnipeg's (204) since 2010.</h2>
+        <p class="eyebrow">About</p>
+        <h2 style="margin-top:0.5rem;">Winnipeg's (204) since 2010</h2>
         <p style="margin-top:1.2rem;">Dan Gilbert and Jared Brown founded 204 Volleyball Club for the 2010 season. They set out to help athletes get recruited for post-secondary volleyball and to prepare them for life after sport.</p>
         <p>204 athletes train in the weight room as well as on the court. The club built a strong culture and a real pride in wearing the cardinal and gold. Over the years, 204 teams have won Provincial and National medals.</p>
         <p>Our teams compete under Volleyball Manitoba. 2027 marks our 18th season.</p>
@@ -466,8 +466,8 @@
   <section id="gallery">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">(In Action)</p>
-        <h2>Game day.</h2>
+        <p class="eyebrow">Photos</p>
+        <h2>On the court</h2>
       </div>
       <div class="gallery reveal">
         <figure class="shot big"><img src="img/action/spike.jpg" alt="A 204 player in cardinal elevates for a spike while teammates watch" width="1170" height="780" loading="lazy" style="object-position:60% 40%"></figure>
@@ -482,8 +482,8 @@
   <section id="faq" style="background:var(--surface); border-block:1px solid var(--line);">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">(FAQ)</p>
-        <h2>Good to know.</h2>
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions from parents</h2>
       </div>
       <div class="faq reveal">
         <details>
@@ -518,40 +518,19 @@
     </div>
   </section>
 
-  <section class="final">
-    <div class="wrap final-grid reveal">
-      <div>
-        <p class="eyebrow">(Next Season)</p>
-        <h2 style="margin-top:0.5rem;">Tryouts come first.</h2>
-        <p>Register your athlete for tryouts and start the season with 204.</p>
+  <section id="contact" class="final">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 style="margin-top:0.5rem;">Questions? Call Jared</h2>
+        <p>Jared Brown, club director and co-founder, handles tryout, camp, and team questions.</p>
         <div class="cta-row">
           <a class="btn btn-gold" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Register for Tryouts</a>
           <a class="btn btn-outline" href="tel:12049960675">Call (204) 996-0675</a>
         </div>
       </div>
-      <img src="logo-mark-gold.jpg" alt="" width="323" height="340" loading="lazy">
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap contact-grid">
-      <div class="reveal">
-        <p class="eyebrow">(Register)</p>
-        <h2 style="margin-top:0.5rem; margin-bottom:2rem;">Register or reach out.</h2>
-        <div class="reg-cta">
-          <h3>Tryout registration</h3>
-          <p>Register your athlete through the club's tryout form. The form lists every tryout date.</p>
-          <dl>
-            <div class="row"><dt>Gym</dt><dd>St. Paul's</dd></div>
-            <div class="row"><dt>Fee</dt><dd>$40</dd></div>
-            <div class="row"><dt>Payment</dt><dd>E-transfer</dd></div>
-          </dl>
-          <a class="btn btn-red" href="https://forms.gle/Wxpkz1nemtZNvN256" target="_blank" rel="noopener">Open the Tryout Form</a>
-        </div>
-      </div>
       <div class="reveal">
         <ul class="info">
-          <li><span class="k">Contact</span><span class="v">Jared Brown</span></li>
           <li><span class="k">Role</span><span class="v">Club Director, Co-Founder, 16U Gold Head Coach</span></li>
           <li><span class="k">Phone</span><span class="v"><a href="tel:12049960675">(204) 996-0675</a></span></li>
           <li><span class="k">Email</span><span class="v"><a href="mailto:b_jared@hotmail.com">b_jared@hotmail.com</a></span></li>
