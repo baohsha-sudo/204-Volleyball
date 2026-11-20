@@ -167,6 +167,16 @@
   .sw-gold { background: #FFCC00; }
   .sw-cardinal { background: #9A0000; }
   .sw-white { background: #FFFFFF; }
+  .team-photos-head { margin-top: clamp(2.5rem, 6vw, 3.5rem); margin-bottom: 1.2rem; font-size: clamp(1.6rem, 3vw, 2rem); }
+  .team-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+  @media (max-width: 900px) { .team-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .team-photos { grid-template-columns: 1fr; } }
+  .team-shot { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+  .team-shot img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #171313; }
+  .team-shot figcaption { display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap; padding: 0.8rem 1rem; border-top: 4px solid var(--brand-red); font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); }
+  .staff-photo { margin: 0 0 1.6rem; border-radius: 6px; overflow: hidden; background: #171313; }
+  .staff-photo img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; object-position: 50% 62%; }
+  @media (max-width: 700px) { .staff-photo img { aspect-ratio: 3 / 2; } }
   .fee-note { margin-top: 1.4rem; font-size: 0.95rem; color: var(--muted); max-width: 64ch; }
 
   /* Register programs */
@@ -382,6 +392,24 @@
           </dl>
         </article>
       </div>
+      <h3 class="team-photos-head reveal">Team photos</h3>
+      <div class="team-photos reveal" role="list" aria-label="Team photos">
+        <figure class="team-shot" role="listitem"><img src="img/teams/13u-gold.jpg" alt="13U Gold team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-gold"></span>13U Gold</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/13u-cardinal.jpg" alt="13U Cardinal team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-cardinal"></span>13U Cardinal</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/14u-gold.jpg" alt="14U Gold team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-gold"></span>14U Gold</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/14u-cardinal.jpg" alt="14U Cardinal team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-cardinal"></span>14U Cardinal</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/14u-white.jpg" alt="14U White team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-white"></span>14U White</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/15u-gold.jpg" alt="15U Gold team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-gold"></span>15U Gold</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/15u-cardinal.jpg" alt="15U Cardinal team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-cardinal"></span>15U Cardinal</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/15u-white.jpg" alt="15U White team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-white"></span>15U White</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/16u-gold.jpg" alt="16U Gold team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-gold"></span>16U Gold</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/16u-cardinal.jpg" alt="16U Cardinal team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-cardinal"></span>16U Cardinal</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/16u-white.jpg" alt="16U White team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-white"></span>16U White</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/17u-gold.jpg" alt="17U Gold team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-gold"></span>17U Gold</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/17u-cardinal.jpg" alt="17U Cardinal team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-cardinal"></span>17U Cardinal</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/18u-gold.jpg" alt="18U Gold team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-gold"></span>18U Gold</figcaption></figure>
+        <figure class="team-shot" role="listitem"><img src="img/teams/18u-cardinal.jpg" alt="18U Cardinal team photo" width="1170" height="780" loading="lazy"><figcaption><span class="swatch sw-cardinal"></span>18U Cardinal</figcaption></figure>
+      </div>
     </div>
   </section>
 
@@ -423,6 +451,7 @@
         <h2>Meet the coaches</h2>
         <p class="lede">Head coaches for every 204 team.</p>
       </div>
+      <figure class="staff-photo reveal"><img src="img/coaches-staff.jpg" alt="204 Volleyball Club coaches and staff together in a gym" width="1170" height="795" loading="lazy"></figure>
       <div class="coach-grid reveal" role="list" aria-label="Coaching staff">
         <article class="coach-card" role="listitem"><img src="img/coaches/zack-diboll.jpg" alt="Zack Diboll" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Zack Diboll</h3><p class="coach-team"><span class="swatch sw-gold"></span>13U Gold</p></div></article>
         <article class="coach-card coach-tbd" role="listitem"><img src="logo-mark-gold.jpg" alt="204 Volleyball Club logo" width="323" height="340" loading="lazy"><div class="coach-meta"><h3>TBD</h3><p class="coach-team"><span class="swatch sw-cardinal"></span>13U Cardinal</p></div></article>
@@ -431,7 +460,7 @@
         <article class="coach-card coach-tbd" role="listitem"><img src="logo-mark-gold.jpg" alt="204 Volleyball Club logo" width="323" height="340" loading="lazy"><div class="coach-meta"><h3>TBD</h3><p class="coach-team"><span class="swatch sw-white"></span>14U White</p></div></article>
         <article class="coach-card" role="listitem"><img src="img/coaches/ethan-olfert.jpg" alt="Ethan Olfert" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Ethan Olfert</h3><p class="coach-team"><span class="swatch sw-gold"></span>15U Gold</p></div></article>
         <article class="coach-card" role="listitem"><img src="img/coaches/tj-stroud.jpg" alt="TJ Stroud" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>TJ Stroud</h3><p class="coach-team"><span class="swatch sw-cardinal"></span>15U Cardinal</p></div></article>
-        <article class="coach-card coach-tbd" role="listitem"><img src="logo-mark-gold.jpg" alt="204 Volleyball Club logo" width="323" height="340" loading="lazy"><div class="coach-meta"><h3>TBD</h3><p class="coach-team"><span class="swatch sw-white"></span>15U White</p></div></article>
+        <article class="coach-card" role="listitem"><img src="img/coaches/zacharie-poirier.jpg" alt="Zacharie Poirier" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Zacharie Poirier</h3><p class="coach-team"><span class="swatch sw-white"></span>15U White</p></div></article>
         <article class="coach-card" role="listitem"><img src="img/coaches/jared-brown.jpg" alt="Jared Brown" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Jared Brown</h3><p class="coach-team"><span class="swatch sw-gold"></span>16U Gold</p></div></article>
         <article class="coach-card" role="listitem"><img src="img/coaches/jazz-gill.jpg" alt="Jazz Gill" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Jazz Gill</h3><p class="coach-team"><span class="swatch sw-cardinal"></span>16U Cardinal</p></div></article>
         <article class="coach-card" role="listitem"><img src="img/coaches/kharsun-khamvongsa.jpg" alt="Kharsun Khamvongsa" width="598" height="750" loading="lazy"><div class="coach-meta"><h3>Kharsun Khamvongsa</h3><p class="coach-team"><span class="swatch sw-white"></span>16U White</p></div></article>
